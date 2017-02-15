@@ -9,26 +9,26 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ManyHong\JWTAuth;
 
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Providers\JWT\JWTInterface;
-use Tymon\JWTAuth\Exceptions\TokenBlacklistedException;
+use ManyHong\JWTAuth\Exceptions\JWTException;
+use ManyHong\JWTAuth\Providers\JWT\JWTInterface;
+use ManyHong\JWTAuth\Exceptions\TokenBlacklistedException;
 
 class JWTManager
 {
     /**
-     * @var \Tymon\JWTAuth\Providers\JWT\JWTInterface
+     * @var \ManyHong\JWTAuth\Providers\JWT\JWTInterface
      */
     protected $jwt;
 
     /**
-     * @var \Tymon\JWTAuth\Blacklist
+     * @var \ManyHong\JWTAuth\Blacklist
      */
     protected $blacklist;
 
     /**
-     * @var \Tymon\JWTAuth\PayloadFactory
+     * @var \ManyHong\JWTAuth\PayloadFactory
      */
     protected $payloadFactory;
 
@@ -43,9 +43,9 @@ class JWTManager
     protected $refreshFlow = false;
 
     /**
-     *  @param \Tymon\JWTAuth\Providers\JWT\JWTInterface  $jwt
-     *  @param \Tymon\JWTAuth\Blacklist  $blacklist
-     *  @param \Tymon\JWTAuth\PayloadFactory  $payloadFactory
+     *  @param \ManyHong\JWTAuth\Providers\JWT\JWTInterface  $jwt
+     *  @param \ManyHong\JWTAuth\Blacklist  $blacklist
+     *  @param \ManyHong\JWTAuth\PayloadFactory  $payloadFactory
      */
     public function __construct(JWTInterface $jwt, Blacklist $blacklist, PayloadFactory $payloadFactory)
     {
@@ -57,8 +57,8 @@ class JWTManager
     /**
      * Encode a Payload and return the Token.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
-     * @return \Tymon\JWTAuth\Token
+     * @param  \ManyHong\JWTAuth\Payload  $payload
+     * @return \ManyHong\JWTAuth\Token
      */
     public function encode(Payload $payload)
     {
@@ -70,7 +70,7 @@ class JWTManager
     /**
      * Decode a Token and return the Payload.
      *
-     * @param  \Tymon\JWTAuth\Token $token
+     * @param  \ManyHong\JWTAuth\Token $token
      * @return Payload
      * @throws TokenBlacklistedException
      */
@@ -90,8 +90,8 @@ class JWTManager
     /**
      * Refresh a Token and return a new Token.
      *
-     * @param  \Tymon\JWTAuth\Token  $token
-     * @return \Tymon\JWTAuth\Token
+     * @param  \ManyHong\JWTAuth\Token  $token
+     * @return \ManyHong\JWTAuth\Token
      */
     public function refresh(Token $token)
     {
@@ -129,7 +129,7 @@ class JWTManager
     /**
      * Get the PayloadFactory instance.
      *
-     * @return \Tymon\JWTAuth\PayloadFactory
+     * @return \ManyHong\JWTAuth\PayloadFactory
      */
     public function getPayloadFactory()
     {
@@ -139,7 +139,7 @@ class JWTManager
     /**
      * Get the JWTProvider instance.
      *
-     * @return \Tymon\JWTAuth\Providers\JWT\JWTInterface
+     * @return \ManyHong\JWTAuth\Providers\JWT\JWTInterface
      */
     public function getJWTProvider()
     {
@@ -149,7 +149,7 @@ class JWTManager
     /**
      * Get the Blacklist instance.
      *
-     * @return \Tymon\JWTAuth\Blacklist
+     * @return \ManyHong\JWTAuth\Blacklist
      */
     public function getBlacklist()
     {

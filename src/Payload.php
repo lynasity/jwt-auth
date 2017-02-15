@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ManyHong\JWTAuth;
 
-use Tymon\JWTAuth\Claims\Claim;
-use Tymon\JWTAuth\Exceptions\PayloadException;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use ManyHong\JWTAuth\Claims\Claim;
+use ManyHong\JWTAuth\Exceptions\PayloadException;
+use ManyHong\JWTAuth\Validators\PayloadValidator;
 
 class Payload implements \ArrayAccess
 {
     /**
      * The array of claims.
      *
-     * @var \Tymon\JWTAuth\Claims\Claim[]
+     * @var \ManyHong\JWTAuth\Claims\Claim[]
      */
     private $claims = [];
 
@@ -28,7 +28,7 @@ class Payload implements \ArrayAccess
      * Build the Payload.
      *
      * @param array  $claims
-     * @param \Tymon\JWTAuth\Validators\PayloadValidator  $validator
+     * @param \ManyHong\JWTAuth\Validators\PayloadValidator  $validator
      * @param bool   $refreshFlow
      */
     public function __construct(array $claims, PayloadValidator $validator, $refreshFlow = false)
@@ -41,7 +41,7 @@ class Payload implements \ArrayAccess
     /**
      * Get the array of claim instances.
      *
-     * @return \Tymon\JWTAuth\Claims\Claim[]
+     * @return \ManyHong\JWTAuth\Claims\Claim[]
      */
     public function getClaims()
     {
@@ -85,7 +85,7 @@ class Payload implements \ArrayAccess
     /**
      * Determine whether the payload has the claim.
      *
-     * @param  \Tymon\JWTAuth\Claims\Claim  $claim
+     * @param  \ManyHong\JWTAuth\Claims\Claim  $claim
      * @return bool
      */
     public function has(Claim $claim)

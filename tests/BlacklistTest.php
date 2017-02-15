@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\JWT;
+namespace ManyHong\JWTAuth\Test\Providers\JWT;
 
 use Mockery;
 use Carbon\Carbon;
-use Tymon\JWTAuth\Payload;
-use Tymon\JWTAuth\Blacklist;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\Subject;
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Expiration;
+use ManyHong\JWTAuth\Payload;
+use ManyHong\JWTAuth\Blacklist;
+use ManyHong\JWTAuth\Claims\JwtId;
+use ManyHong\JWTAuth\Claims\Issuer;
+use ManyHong\JWTAuth\Claims\Subject;
+use ManyHong\JWTAuth\Claims\IssuedAt;
+use ManyHong\JWTAuth\Claims\NotBefore;
+use ManyHong\JWTAuth\Claims\Expiration;
 
 class BlacklistTest extends \PHPUnit_Framework_TestCase
 {
@@ -28,11 +28,11 @@ class BlacklistTest extends \PHPUnit_Framework_TestCase
     {
         Carbon::setTestNow(Carbon::createFromTimeStampUTC(123));
 
-        $this->storage = Mockery::mock('Tymon\JWTAuth\Providers\Storage\StorageInterface');
+        $this->storage = Mockery::mock('ManyHong\JWTAuth\Providers\Storage\StorageInterface');
         $this->blacklist = new Blacklist($this->storage);
         $this->blacklist->setRefreshTTL(20160);
 
-        $this->validator = Mockery::mock('Tymon\JWTAuth\Validators\PayloadValidator');
+        $this->validator = Mockery::mock('ManyHong\JWTAuth\Validators\PayloadValidator');
         $this->validator->shouldReceive('setRefreshFlow->check');
     }
 

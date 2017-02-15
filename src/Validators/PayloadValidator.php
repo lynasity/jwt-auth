@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Validators;
+namespace ManyHong\JWTAuth\Validators;
 
-use Tymon\JWTAuth\Utils;
-use Tymon\JWTAuth\Exceptions\TokenExpiredException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use ManyHong\JWTAuth\Utils;
+use ManyHong\JWTAuth\Exceptions\TokenExpiredException;
+use ManyHong\JWTAuth\Exceptions\TokenInvalidException;
 
 class PayloadValidator extends AbstractValidator
 {
@@ -49,7 +49,7 @@ class PayloadValidator extends AbstractValidator
      * the claims have the relevant type.
      *
      * @param array  $payload
-     * @throws \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @throws \ManyHong\JWTAuth\Exceptions\TokenInvalidException
      * @return bool
      */
     protected function validateStructure(array $payload)
@@ -65,8 +65,8 @@ class PayloadValidator extends AbstractValidator
      * Validate the payload timestamps.
      *
      * @param  array  $payload
-     * @throws \Tymon\JWTAuth\Exceptions\TokenExpiredException
-     * @throws \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @throws \ManyHong\JWTAuth\Exceptions\TokenExpiredException
+     * @throws \ManyHong\JWTAuth\Exceptions\TokenInvalidException
      * @return bool
      */
     protected function validateTimestamps(array $payload)

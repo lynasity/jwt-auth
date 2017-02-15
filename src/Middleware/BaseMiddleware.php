@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Middleware;
+namespace ManyHong\JWTAuth\Middleware;
 
-use Tymon\JWTAuth\JWTAuth;
+use ManyHong\JWTAuth\JWTAuth;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Routing\ResponseFactory;
 
@@ -28,7 +28,7 @@ abstract class BaseMiddleware
     protected $events;
 
     /**
-     * @var \Tymon\JWTAuth\JWTAuth
+     * @var \ManyHong\JWTAuth\JWTAuth
      */
     protected $auth;
 
@@ -37,7 +37,7 @@ abstract class BaseMiddleware
      *
      * @param \Illuminate\Contracts\Routing\ResponseFactory  $response
      * @param \Illuminate\Contracts\Events\Dispatcher  $events
-     * @param \Tymon\JWTAuth\JWTAuth  $auth
+     * @param \ManyHong\JWTAuth\JWTAuth  $auth
      */
     public function __construct(ResponseFactory $response, Dispatcher $events, JWTAuth $auth)
     {

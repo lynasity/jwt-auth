@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Commands;
+namespace ManyHong\JWTAuth\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;

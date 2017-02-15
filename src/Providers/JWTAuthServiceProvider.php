@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers;
+namespace ManyHong\JWTAuth\Providers;
 
-use Tymon\JWTAuth\JWTAuth;
-use Tymon\JWTAuth\Blacklist;
-use Tymon\JWTAuth\JWTManager;
-use Tymon\JWTAuth\Claims\Factory;
-use Tymon\JWTAuth\PayloadFactory;
+use ManyHong\JWTAuth\JWTAuth;
+use ManyHong\JWTAuth\Blacklist;
+use ManyHong\JWTAuth\JWTManager;
+use ManyHong\JWTAuth\Claims\Factory;
+use ManyHong\JWTAuth\PayloadFactory;
 use Illuminate\Support\ServiceProvider;
-use Tymon\JWTAuth\Commands\JWTGenerateCommand;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use ManyHong\JWTAuth\Commands\JWTGenerateCommand;
+use ManyHong\JWTAuth\Validators\PayloadValidator;
 
 class JWTAuthServiceProvider extends ServiceProvider
 {
@@ -48,43 +48,43 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function bootBindings()
     {
-        $this->app['Tymon\JWTAuth\JWTAuth'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\JWTAuth'] = function ($app) {
             return $app['tymon.jwt.auth'];
         };
 
-        $this->app['Tymon\JWTAuth\Providers\User\UserInterface'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\Providers\User\UserInterface'] = function ($app) {
             return $app['tymon.jwt.provider.user'];
         };
 
-        $this->app['Tymon\JWTAuth\Providers\JWT\JWTInterface'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\Providers\JWT\JWTInterface'] = function ($app) {
             return $app['tymon.jwt.provider.jwt'];
         };
 
-        $this->app['Tymon\JWTAuth\Providers\Auth\AuthInterface'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\Providers\Auth\AuthInterface'] = function ($app) {
             return $app['tymon.jwt.provider.auth'];
         };
 
-        $this->app['Tymon\JWTAuth\Providers\Storage\StorageInterface'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\Providers\Storage\StorageInterface'] = function ($app) {
             return $app['tymon.jwt.provider.storage'];
         };
 
-        $this->app['Tymon\JWTAuth\JWTManager'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\JWTManager'] = function ($app) {
             return $app['tymon.jwt.manager'];
         };
 
-        $this->app['Tymon\JWTAuth\Blacklist'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\Blacklist'] = function ($app) {
             return $app['tymon.jwt.blacklist'];
         };
 
-        $this->app['Tymon\JWTAuth\PayloadFactory'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\PayloadFactory'] = function ($app) {
             return $app['tymon.jwt.payload.factory'];
         };
 
-        $this->app['Tymon\JWTAuth\Claims\Factory'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\Claims\Factory'] = function ($app) {
             return $app['tymon.jwt.claim.factory'];
         };
 
-        $this->app['Tymon\JWTAuth\Validators\PayloadValidator'] = function ($app) {
+        $this->app['ManyHong\JWTAuth\Validators\PayloadValidator'] = function ($app) {
             return $app['tymon.jwt.validators.payload'];
         };
     }

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ManyHong\JWTAuth;
 
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Claims\Factory;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use ManyHong\JWTAuth\Claims\Factory;
+use ManyHong\JWTAuth\Validators\PayloadValidator;
 
 class PayloadFactory
 {
     /**
-     * @var \Tymon\JWTAuth\Claims\Factory
+     * @var \ManyHong\JWTAuth\Claims\Factory
      */
     protected $claimFactory;
 
@@ -28,7 +28,7 @@ class PayloadFactory
     protected $request;
 
     /**
-     * @var \Tymon\JWTAuth\Validators\PayloadValidator
+     * @var \ManyHong\JWTAuth\Validators\PayloadValidator
      */
     protected $validator;
 
@@ -53,9 +53,9 @@ class PayloadFactory
     protected $claims = [];
 
     /**
-     * @param \Tymon\JWTAuth\Claims\Factory  $claimFactory
+     * @param \ManyHong\JWTAuth\Claims\Factory  $claimFactory
      * @param \Illuminate\Http\Request  $request
-     * @param \Tymon\JWTAuth\Validators\PayloadValidator  $validator
+     * @param \ManyHong\JWTAuth\Validators\PayloadValidator  $validator
      */
     public function __construct(Factory $claimFactory, Request $request, PayloadValidator $validator)
     {
@@ -68,7 +68,7 @@ class PayloadFactory
      * Create the Payload instance.
      *
      * @param  array  $customClaims
-     * @return \Tymon\JWTAuth\Payload
+     * @return \ManyHong\JWTAuth\Payload
      */
     public function make(array $customClaims = [])
     {

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\User;
+namespace ManyHong\JWTAuth\Test\Providers\User;
 
 use Mockery;
-use Tymon\JWTAuth\Providers\User\EloquentUserAdapter;
+use ManyHong\JWTAuth\Providers\User\EloquentUserAdapter;
 
 class EloquentUserAdapterTest extends \PHPUnit_Framework_TestCase
 {

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Validators;
+namespace ManyHong\JWTAuth\Validators;
 
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use ManyHong\JWTAuth\Exceptions\TokenInvalidException;
 
 class TokenValidator extends AbstractValidator
 {
@@ -28,7 +28,7 @@ class TokenValidator extends AbstractValidator
 
     /**
      * @param  string  $token
-     * @throws \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @throws \ManyHong\JWTAuth\Exceptions\TokenInvalidException
      * @return bool
      */
     protected function validateStructure($token)

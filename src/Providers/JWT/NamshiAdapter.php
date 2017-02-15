@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers\JWT;
+namespace ManyHong\JWTAuth\Providers\JWT;
 
 use Exception;
 use Namshi\JOSE\JWS;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use ManyHong\JWTAuth\Exceptions\JWTException;
+use ManyHong\JWTAuth\Exceptions\TokenInvalidException;
 
 class NamshiAdapter extends JWTProvider implements JWTInterface
 {
@@ -39,7 +39,7 @@ class NamshiAdapter extends JWTProvider implements JWTInterface
      * Create a JSON Web Token.
      *
      * @return string
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \ManyHong\JWTAuth\Exceptions\JWTException
      */
     public function encode(array $payload)
     {
@@ -57,7 +57,7 @@ class NamshiAdapter extends JWTProvider implements JWTInterface
      *
      * @param  string  $token
      * @return array
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \ManyHong\JWTAuth\Exceptions\JWTException
      */
     public function decode($token)
     {

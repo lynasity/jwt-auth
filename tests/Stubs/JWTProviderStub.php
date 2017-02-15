@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Stubs;
+namespace ManyHong\JWTAuth\Test\Stubs;
 
-use Tymon\JWTAuth\Providers\JWT\JWTProvider;
+use ManyHong\JWTAuth\Providers\JWT\JWTProvider;
 
 class JWTProviderStub extends JWTProvider
 {

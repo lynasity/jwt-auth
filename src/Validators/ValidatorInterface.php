@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Validators;
+namespace ManyHong\JWTAuth\Validators;
 
 interface ValidatorInterface
 {

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace ManyHong\JWTAuth\Test;
 
-use Tymon\JWTAuth\Validators\TokenValidator;
+use ManyHong\JWTAuth\Validators\TokenValidator;
 
 class TokenValidatorTest extends \PHPUnit_Framework_TestCase
 {
@@ -35,7 +35,7 @@ class TokenValidatorTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function it_should_throw_an_axception_when_providing_a_malformed_token()
     {
-        $this->setExpectedException('Tymon\JWTAuth\Exceptions\TokenInvalidException');
+        $this->setExpectedException('ManyHong\JWTAuth\Exceptions\TokenInvalidException');
 
         $this->validator->check('one.two.three.four.five');
     }

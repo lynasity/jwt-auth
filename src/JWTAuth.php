@@ -9,27 +9,27 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ManyHong\JWTAuth;
 
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Providers\Auth\AuthInterface;
-use Tymon\JWTAuth\Providers\User\UserInterface;
+use ManyHong\JWTAuth\Exceptions\JWTException;
+use ManyHong\JWTAuth\Providers\Auth\AuthInterface;
+use ManyHong\JWTAuth\Providers\User\UserInterface;
 
 class JWTAuth
 {
     /**
-     * @var \Tymon\JWTAuth\JWTManager
+     * @var \ManyHong\JWTAuth\JWTManager
      */
     protected $manager;
 
     /**
-     * @var \Tymon\JWTAuth\Providers\User\UserInterface
+     * @var \ManyHong\JWTAuth\Providers\User\UserInterface
      */
     protected $user;
 
     /**
-     * @var \Tymon\JWTAuth\Providers\Auth\AuthInterface
+     * @var \ManyHong\JWTAuth\Providers\Auth\AuthInterface
      */
     protected $auth;
 
@@ -44,14 +44,14 @@ class JWTAuth
     protected $identifier = 'id';
 
     /**
-     * @var \Tymon\JWTAuth\Token
+     * @var \ManyHong\JWTAuth\Token
      */
     protected $token;
 
     /**
-     * @param \Tymon\JWTAuth\JWTManager                   $manager
-     * @param \Tymon\JWTAuth\Providers\User\UserInterface $user
-     * @param \Tymon\JWTAuth\Providers\Auth\AuthInterface $auth
+     * @param \ManyHong\JWTAuth\JWTManager                   $manager
+     * @param \ManyHong\JWTAuth\Providers\User\UserInterface $user
+     * @param \ManyHong\JWTAuth\Providers\Auth\AuthInterface $auth
      * @param \Illuminate\Http\Request                    $request
      */
     public function __construct(JWTManager $manager, UserInterface $user, AuthInterface $auth, Request $request)
@@ -181,7 +181,7 @@ class JWTAuth
      *
      * @param mixed $token
      *
-     * @return \Tymon\JWTAuth\Payload
+     * @return \ManyHong\JWTAuth\Payload
      */
     public function getPayload($token = false)
     {
@@ -233,7 +233,7 @@ class JWTAuth
      * @param mixed $subject
      * @param array $customClaims
      *
-     * @return \Tymon\JWTAuth\Payload
+     * @return \ManyHong\JWTAuth\Payload
      */
     protected function makePayload($subject, array $customClaims = [])
     {
@@ -287,7 +287,7 @@ class JWTAuth
      *
      * @return JWTAuth
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \ManyHong\JWTAuth\Exceptions\JWTException
      */
     protected function requireToken($token)
     {
@@ -315,7 +315,7 @@ class JWTAuth
     /**
      * Get the JWTManager instance.
      *
-     * @return \Tymon\JWTAuth\JWTManager
+     * @return \ManyHong\JWTAuth\JWTManager
      */
     public function manager()
     {

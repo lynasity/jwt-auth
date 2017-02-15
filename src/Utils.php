@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ManyHong\JWTAuth;
 
 use Carbon\Carbon;
 

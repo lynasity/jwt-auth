@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers\JWT;
+namespace ManyHong\JWTAuth\Providers\JWT;
 
 interface JWTInterface
 {

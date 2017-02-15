@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\JWT;
+namespace ManyHong\JWTAuth\Test\Providers\JWT;
 
-use Tymon\JWTAuth\Token;
+use ManyHong\JWTAuth\Token;
 
 class TokenTest extends \PHPUnit_Framework_TestCase
 {

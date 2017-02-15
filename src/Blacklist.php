@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ManyHong\JWTAuth;
 
-use Tymon\JWTAuth\Providers\Storage\StorageInterface;
+use ManyHong\JWTAuth\Providers\Storage\StorageInterface;
 
 class Blacklist
 {
     /**
-     * @var \Tymon\JWTAuth\Providers\Storage\StorageInterface
+     * @var \ManyHong\JWTAuth\Providers\Storage\StorageInterface
      */
     protected $storage;
 
@@ -28,7 +28,7 @@ class Blacklist
     protected $refreshTTL = 20160;
 
     /**
-     * @param \Tymon\JWTAuth\Providers\Storage\StorageInterface  $storage
+     * @param \ManyHong\JWTAuth\Providers\Storage\StorageInterface  $storage
      */
     public function __construct(StorageInterface $storage)
     {
@@ -38,7 +38,7 @@ class Blacklist
     /**
      * Add the token (jti claim) to the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ManyHong\JWTAuth\Payload  $payload
      * @return bool
      */
     public function add(Payload $payload)
@@ -66,7 +66,7 @@ class Blacklist
     /**
      * Determine whether the token has been blacklisted.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ManyHong\JWTAuth\Payload  $payload
      * @return bool
      */
     public function has(Payload $payload)
@@ -77,7 +77,7 @@ class Blacklist
     /**
      * Remove the token (jti claim) from the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ManyHong\JWTAuth\Payload  $payload
      * @return bool
      */
     public function remove(Payload $payload)

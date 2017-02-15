@@ -3,25 +3,25 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ManyHong <ManyHong148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace ManyHong\JWTAuth\Test;
 
 use Mockery;
-use Tymon\JWTAuth\Middleware\GetUserFromToken;
-use Tymon\JWTAuth\Exceptions\TokenExpiredException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use ManyHong\JWTAuth\Middleware\GetUserFromToken;
+use ManyHong\JWTAuth\Exceptions\TokenExpiredException;
+use ManyHong\JWTAuth\Exceptions\TokenInvalidException;
 
 class GetUserFromTokenTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
         $this->events = Mockery::mock('Illuminate\Contracts\Events\Dispatcher');
-        $this->auth = Mockery::mock('Tymon\JWTAuth\JWTAuth');
+        $this->auth = Mockery::mock('ManyHong\JWTAuth\JWTAuth');
 
         $this->request = Mockery::mock('Illuminate\Http\Request');
         $this->response = Mockery::mock('Illuminate\Contracts\Routing\ResponseFactory');
@@ -41,7 +41,7 @@ class GetUserFromTokenTest extends \PHPUnit_Framework_TestCase
     {
         $this->auth->shouldReceive('getToken')->once()->andReturn(false);
 
-        $this->events->shouldReceive('fire')->once()->with('tymon.jwt.absent', [], true);
+        $this->events->shouldReceive('fire')->once()->with('ManyHong.jwt.absent', [], true);
         $this->response->shouldReceive('json')->with(['error' => 'token_not_provided'], 400);
 
         $this->middleware->handle($this->request, function () {
@@ -56,7 +56,7 @@ class GetUserFromTokenTest extends \PHPUnit_Framework_TestCase
         $this->auth->shouldReceive('getToken')->once()->andReturn('foo');
         $this->auth->shouldReceive('authenticate')->once()->with('foo')->andThrow($exception);
 
-        $this->events->shouldReceive('fire')->once()->with('tymon.jwt.expired', [$exception], true);
+        $this->events->shouldReceive('fire')->once()->with('ManyHong.jwt.expired', [$exception], true);
         $this->response->shouldReceive('json')->with(['error' => 'token_expired'], 401);
 
         $this->middleware->handle($this->request, function () {
@@ -71,7 +71,7 @@ class GetUserFromTokenTest extends \PHPUnit_Framework_TestCase
         $this->auth->shouldReceive('getToken')->once()->andReturn('foo');
         $this->auth->shouldReceive('authenticate')->once()->with('foo')->andThrow($exception);
 
-        $this->events->shouldReceive('fire')->once()->with('tymon.jwt.invalid', [$exception], true);
+        $this->events->shouldReceive('fire')->once()->with('ManyHong.jwt.invalid', [$exception], true);
         $this->response->shouldReceive('json')->with(['error' => 'token_invalid'], 400);
 
         $this->middleware->handle($this->request, function () {
@@ -84,7 +84,7 @@ class GetUserFromTokenTest extends \PHPUnit_Framework_TestCase
         $this->auth->shouldReceive('getToken')->once()->andReturn('foo');
         $this->auth->shouldReceive('authenticate')->once()->with('foo')->andReturn(false);
 
-        $this->events->shouldReceive('fire')->once()->with('tymon.jwt.user_not_found', [], true);
+        $this->events->shouldReceive('fire')->once()->with('ManyHong.jwt.user_not_found', [], true);
         $this->response->shouldReceive('json')->with(['error' => 'user_not_found'], 404);
 
         $this->middleware->handle($this->request, function () {
@@ -99,7 +99,7 @@ class GetUserFromTokenTest extends \PHPUnit_Framework_TestCase
         $this->auth->shouldReceive('getToken')->once()->andReturn('foo');
         $this->auth->shouldReceive('authenticate')->once()->with('foo')->andReturn($user);
 
-        $this->events->shouldReceive('fire')->once()->with('tymon.jwt.valid', $user);
+        $this->events->shouldReceive('fire')->once()->with('ManyHong.jwt.valid', $user);
         $this->response->shouldReceive('json')->never();
 
         $this->middleware->handle($this->request, function () {

@@ -3,16 +3,16 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ManyHong <ManyHong148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\Auth;
+namespace ManyHong\JWTAuth\Test\Providers\Auth;
 
 use Mockery;
-use Tymon\JWTAuth\Providers\Auth\IlluminateAuthAdapter;
+use ManyHong\JWTAuth\Providers\Auth\IlluminateAuthAdapter;
 
 class IlluminateAuthAdapterTest extends \PHPUnit_Framework_TestCase
 {

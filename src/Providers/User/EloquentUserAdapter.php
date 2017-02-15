@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers\User;
+namespace ManyHong\JWTAuth\Providers\User;
 
 use Illuminate\Database\Eloquent\Model;
 

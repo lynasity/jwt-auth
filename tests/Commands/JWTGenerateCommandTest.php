@@ -3,16 +3,16 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ManyHong <ManyHong148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace ManyHong\JWTAuth\Test;
 
 use Illuminate\Foundation\Application;
-use Tymon\JWTAuth\Commands\JWTGenerateCommand;
+use ManyHong\JWTAuth\Commands\JWTGenerateCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Tester\CommandTester;

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Validators;
+namespace ManyHong\JWTAuth\Validators;
 
-use Tymon\JWTAuth\Exceptions\JWTException;
+use ManyHong\JWTAuth\Exceptions\JWTException;
 
 abstract class AbstractValidator implements ValidatorInterface
 {

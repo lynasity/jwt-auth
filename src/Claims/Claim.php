@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Claims;
+namespace ManyHong\JWTAuth\Claims;
 
-use Tymon\JWTAuth\Exceptions\InvalidClaimException;
+use ManyHong\JWTAuth\Exceptions\InvalidClaimException;
 
 abstract class Claim implements ClaimInterface
 {
@@ -41,7 +41,7 @@ abstract class Claim implements ClaimInterface
      * Set the claim value, and call a validate method if available.
      *
      * @param $value
-     * @throws \Tymon\JWTAuth\Exceptions\InvalidClaimException
+     * @throws \ManyHong\JWTAuth\Exceptions\InvalidClaimException
      * @return $this
      */
     public function setValue($value)

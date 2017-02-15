@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tymon\\JWTAuth\\": "src"
+            "ManyHong\\JWTAuth\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tymon\\JWTAuth\\Test\\": "tests"
+            "ManyHong\\JWTAuth\\Test\\": "tests"
         }
     },
     "extra": {

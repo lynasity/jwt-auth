@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Middleware;
+namespace ManyHong\JWTAuth\Middleware;
 
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Exceptions\TokenExpiredException;
+use ManyHong\JWTAuth\Exceptions\JWTException;
+use ManyHong\JWTAuth\Exceptions\TokenExpiredException;
 
 class RefreshToken extends BaseMiddleware
 {

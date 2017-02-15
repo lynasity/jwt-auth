@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\Storage;
+namespace ManyHong\JWTAuth\Test\Providers\Storage;
 
 use Mockery;
-use Tymon\JWTAuth\Providers\Storage\IlluminateCacheAdapter;
+use ManyHong\JWTAuth\Providers\Storage\IlluminateCacheAdapter;
 
 class IlluminateCacheAdapterTest extends \PHPUnit_Framework_TestCase
 {

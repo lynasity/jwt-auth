@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers\Storage;
+namespace ManyHong\JWTAuth\Providers\Storage;
 
 use Illuminate\Cache\CacheManager;
 

@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\JWT;
+namespace ManyHong\JWTAuth\Test\Providers\JWT;
 
 use Mockery;
 use Carbon\Carbon;
-use Tymon\JWTAuth\Payload;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\Subject;
-use Tymon\JWTAuth\Claims\Audience;
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Expiration;
+use ManyHong\JWTAuth\Payload;
+use ManyHong\JWTAuth\Claims\JwtId;
+use ManyHong\JWTAuth\Claims\Issuer;
+use ManyHong\JWTAuth\Claims\Subject;
+use ManyHong\JWTAuth\Claims\Audience;
+use ManyHong\JWTAuth\Claims\IssuedAt;
+use ManyHong\JWTAuth\Claims\NotBefore;
+use ManyHong\JWTAuth\Claims\Expiration;
 
 class PayloadTest extends \PHPUnit_Framework_TestCase
 {
@@ -37,7 +37,7 @@ class PayloadTest extends \PHPUnit_Framework_TestCase
             new JwtId('foo'),
         ];
 
-        $this->validator = Mockery::mock('Tymon\JWTAuth\Validators\PayloadValidator');
+        $this->validator = Mockery::mock('ManyHong\JWTAuth\Validators\PayloadValidator');
         $this->validator->shouldReceive('setRefreshFlow->check');
 
         $this->payload = new Payload($claims, $this->validator);
@@ -51,7 +51,7 @@ class PayloadTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function it_throws_an_exception_when_trying_to_add_to_the_payload()
     {
-        $this->setExpectedException('Tymon\JWTAuth\Exceptions\PayloadException');
+        $this->setExpectedException('ManyHong\JWTAuth\Exceptions\PayloadException');
 
         $this->payload['foo'] = 'bar';
     }
@@ -59,7 +59,7 @@ class PayloadTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function it_throws_an_exception_when_trying_to_remove_a_key_from_the_payload()
     {
-        $this->setExpectedException('Tymon\JWTAuth\Exceptions\PayloadException');
+        $this->setExpectedException('ManyHong\JWTAuth\Exceptions\PayloadException');
 
         unset($this->payload['foo']);
     }
@@ -130,7 +130,7 @@ class PayloadTest extends \PHPUnit_Framework_TestCase
     {
         $claims = $this->payload->getClaims();
 
-        $this->assertInstanceOf('Tymon\JWTAuth\Claims\Expiration', $claims[2]);
-        $this->assertInstanceOf('Tymon\JWTAuth\Claims\JwtId', $claims[5]);
+        $this->assertInstanceOf('ManyHong\JWTAuth\Claims\Expiration', $claims[2]);
+        $this->assertInstanceOf('ManyHong\JWTAuth\Claims\JwtId', $claims[5]);
     }
 }
