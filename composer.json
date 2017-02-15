@@ -10,8 +10,8 @@
         "json web token"
     ],
     "homepage": "https://github.com/lynasity/jwt-auth",
+    "minimum-stability": "1.0",
     "license": "MIT",
-    "minimum-stability":"1.0",
     "authors": [
         {
             "name": "manyhong",
