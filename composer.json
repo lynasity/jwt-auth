@@ -11,6 +11,7 @@
     ],
     "homepage": "https://github.com/lynasity/jwt-auth",
     "license": "MIT",
+    "minimum-stability":"1.0",
     "authors": [
         {
             "name": "manyhong",
