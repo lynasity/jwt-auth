@@ -40,7 +40,7 @@ class JWTAuthServiceProvider extends ServiceProvider
 
         $this->bootBindings();
 
-        $this->commands('tymon.jwt.generate');
+        $this->commands('manyhong.jwt.generate');
     }
 
     /**
@@ -49,43 +49,43 @@ class JWTAuthServiceProvider extends ServiceProvider
     protected function bootBindings()
     {
         $this->app['ManyHong\JWTAuth\JWTAuth'] = function ($app) {
-            return $app['tymon.jwt.auth'];
+            return $app['manyhong.jwt.auth'];
         };
 
         $this->app['ManyHong\JWTAuth\Providers\User\UserInterface'] = function ($app) {
-            return $app['tymon.jwt.provider.user'];
+            return $app['manyhong.jwt.provider.user'];
         };
 
         $this->app['ManyHong\JWTAuth\Providers\JWT\JWTInterface'] = function ($app) {
-            return $app['tymon.jwt.provider.jwt'];
+            return $app['manyhong.jwt.provider.jwt'];
         };
 
         $this->app['ManyHong\JWTAuth\Providers\Auth\AuthInterface'] = function ($app) {
-            return $app['tymon.jwt.provider.auth'];
+            return $app['mnayhong.jwt.provider.auth'];
         };
 
         $this->app['ManyHong\JWTAuth\Providers\Storage\StorageInterface'] = function ($app) {
-            return $app['tymon.jwt.provider.storage'];
+            return $app['manyhong.jwt.provider.storage'];
         };
 
         $this->app['ManyHong\JWTAuth\JWTManager'] = function ($app) {
-            return $app['tymon.jwt.manager'];
+            return $app['manyhong.jwt.manager'];
         };
 
         $this->app['ManyHong\JWTAuth\Blacklist'] = function ($app) {
-            return $app['tymon.jwt.blacklist'];
+            return $app['manyhong.jwt.blacklist'];
         };
 
         $this->app['ManyHong\JWTAuth\PayloadFactory'] = function ($app) {
-            return $app['tymon.jwt.payload.factory'];
+            return $app['manyhong.jwt.payload.factory'];
         };
 
         $this->app['ManyHong\JWTAuth\Claims\Factory'] = function ($app) {
-            return $app['tymon.jwt.claim.factory'];
+            return $app['manyhong.jwt.claim.factory'];
         };
 
         $this->app['ManyHong\JWTAuth\Validators\PayloadValidator'] = function ($app) {
-            return $app['tymon.jwt.validators.payload'];
+            return $app['manyhong.jwt.validators.payload'];
         };
     }
 
@@ -119,7 +119,7 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerUserProvider()
     {
-        $this->app->singleton('tymon.jwt.provider.user', function ($app) {
+        $this->app->singleton('manyhong.jwt.provider.user', function ($app) {
             $provider = $this->config('providers.user');
             $model = $app->make(config('auth.providers.'.$this->config('guard').'.model'));
             return new $provider($model);
@@ -131,7 +131,7 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerJWTProvider()
     {
-        $this->app->singleton('tymon.jwt.provider.jwt', function ($app) {
+        $this->app->singleton('manyhong.jwt.provider.jwt', function ($app) {
             $secret = $this->config('secret');
             $algo = $this->config('algo');
             $provider = $this->config('providers.jwt');
@@ -145,7 +145,7 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerAuthProvider()
     {
-        $this->app->singleton('tymon.jwt.provider.auth', function ($app) {
+        $this->app->singleton('manyhong.jwt.provider.auth', function ($app) {
             return $this->getConfigInstance($this->config('providers.auth'));
         });
     }
@@ -155,7 +155,7 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerStorageProvider()
     {
-        $this->app->singleton('tymon.jwt.provider.storage', function ($app) {
+        $this->app->singleton('manyhong.jwt.provider.storage', function ($app) {
             return $this->getConfigInstance($this->config('providers.storage'));
         });
     }
@@ -165,7 +165,7 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerClaimFactory()
     {
-        $this->app->singleton('tymon.jwt.claim.factory', function () {
+        $this->app->singleton('manyhong.jwt.claim.factory', function () {
             return new Factory();
         });
     }
@@ -175,11 +175,11 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerJWTManager()
     {
-        $this->app->singleton('tymon.jwt.manager', function ($app) {
+        $this->app->singleton('manyhong.jwt.manager', function ($app) {
             $instance = new JWTManager(
-                $app['tymon.jwt.provider.jwt'],
-                $app['tymon.jwt.blacklist'],
-                $app['tymon.jwt.payload.factory']
+                $app['manyhong.jwt.provider.jwt'],
+                $app['manyhong.jwt.blacklist'],
+                $app['manyhong.jwt.payload.factory']
             );
 
             return $instance->setBlacklistEnabled((bool) $this->config('blacklist_enabled'));
@@ -191,11 +191,11 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerJWTAuth()
     {
-        $this->app->singleton('tymon.jwt.auth', function ($app) {
+        $this->app->singleton('manyhong.jwt.auth', function ($app) {
             $auth = new JWTAuth(
-                $app['tymon.jwt.manager'],
-                $app['tymon.jwt.provider.user'],
-                $app['tymon.jwt.provider.auth'],
+                $app['manyhong.jwt.manager'],
+                $app['manyhong.jwt.provider.user'],
+                $app['manyhong.jwt.provider.auth'],
                 $app['request']
             );
 
@@ -208,9 +208,8 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerJWTBlacklist()
     {
-        $this->app->singleton('tymon.jwt.blacklist', function ($app) {
-            $instance = new Blacklist($app['tymon.jwt.provider.storage']);
-
+        $this->app->singleton('manyhong.jwt.blacklist', function ($app) {
+            $instance = new Blacklist($app['manyhong.jwt.provider.storage']);
             return $instance->setRefreshTTL($this->config('refresh_ttl'));
         });
     }
@@ -220,7 +219,7 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerPayloadValidator()
     {
-        $this->app->singleton('tymon.jwt.validators.payload', function () {
+        $this->app->singleton('manyhong.jwt.validators.payload', function () {
             return with(new PayloadValidator())->setRefreshTTL($this->config('refresh_ttl'))->setRequiredClaims($this->config('required_claims'));
         });
     }
@@ -230,8 +229,8 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerPayloadFactory()
     {
-        $this->app->singleton('tymon.jwt.payload.factory', function ($app) {
-            $factory = new PayloadFactory($app['tymon.jwt.claim.factory'], $app['request'], $app['tymon.jwt.validators.payload']);
+        $this->app->singleton('manyhong.jwt.payload.factory', function ($app) {
+            $factory = new PayloadFactory($app['manyhong.jwt.claim.factory'], $app['request'], $app['manyhong.jwt.validators.payload']);
 
             return $factory->setTTL($this->config('ttl'));
         });
@@ -242,7 +241,7 @@ class JWTAuthServiceProvider extends ServiceProvider
      */
     protected function registerJWTCommand()
     {
-        $this->app->singleton('tymon.jwt.generate', function () {
+        $this->app->singleton('manyhong.jwt.generate', function () {
             return new JWTGenerateCommand();
         });
     }

@@ -22,6 +22,6 @@ class JWTFactory extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'tymon.jwt.payload.factory';
+        return 'manyhong.jwt.payload.factory';
     }
 }

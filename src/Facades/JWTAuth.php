@@ -22,6 +22,6 @@ class JWTAuth extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'tymon.jwt.auth';
+        return 'manyhong.jwt.auth';
     }
 }

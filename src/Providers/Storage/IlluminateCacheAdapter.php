@@ -23,7 +23,7 @@ class IlluminateCacheAdapter implements StorageInterface
     /**
      * @var string
      */
-    protected $tag = 'tymon.jwt';
+    protected $tag = 'manyhong.jwt';
 
     /**
      * @param \Illuminate\Cache\CacheManager  $cache
